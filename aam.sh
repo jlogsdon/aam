@@ -92,7 +92,7 @@ EOC
       export AAM_ACCOUNT=$account
 
       # Unset variables that may be set by the config
-      [ -z $AWS_CREDENTIAL_FILE ]   || unset $AWS_CREDENTIAL_FILE
+      [ -z $AWS_CREDENTIAL_FILE ]   || unset AWS_CREDENTIAL_FILE
 
       source $store
 
