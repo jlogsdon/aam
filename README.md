@@ -16,9 +16,6 @@ $ exec $SHELL
 
 You should now be able to call `aam`.
 
-```
-export AAM_SCRIPT=$HOME/.aam.sh
-```
 ## Usage
 
 ```
