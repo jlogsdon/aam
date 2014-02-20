@@ -1,15 +1,7 @@
 # AAM is a utility for managing multiple AWS account credentials. It handles loading a default set of credentials, ensures
 # the litany of variables used by the tools are set and provides a mechanism for quickly switching between accounts.
 
-# readlink-esque function that works on Darwin
-real_path () {
-  local cur=`pwd`
-  [ -d $1 ] && DIR=$1
-  [ -f $1 ] && DIR=`dirname $1`
-  cd $DIR && echo `pwd` && cd $cur
-}
-
-export AAM_SCRIPT=$(real_path $0)/$(basename $0)
+[ -z $AAM_SCRIPT ] && export AAM_SCRIPT=$HOME/.aam.sh
 [ -z $AAM_STORE ] && export AAM_STORE=$HOME/.aam
 [ -d $AAM_STORE ] || mkdir -p $AAM_STORE
 [ -z $AAM_DEFAULT_FILE ] && export AAM_DEFAULT_FILE=${AAM_STORE}/.default
