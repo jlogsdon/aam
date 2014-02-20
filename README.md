@@ -6,6 +6,9 @@ mechanism for running commands under a different account without switching your 
 
 ## Installation
 
+**Note: AAM is tested with Bash 4.2 and ZSH 5.0. There is a known issue with Bash 3.2 that is being looked into. See
+below for a temporary manual fix.**
+
 Installation of the script is very simple:
 
 ```
@@ -16,6 +19,14 @@ $ exec $SHELL
 
 You should now be able to call `aam`.
 
+### Bash 3.x
+
+If you're running an older version of Bash (upgrade, what's wrong with you?) you'll need to modify line 12 to the
+following:
+
+```
+export AAM_SCRIPT=$HOME/.aam.sh
+```
 ## Usage
 
 ```
